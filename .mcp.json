@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kanonik": {
+      "type": "http",
+      "url": "https://app.kanonik.ai/mcp"
+    }
+  }
+}

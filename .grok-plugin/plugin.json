@@ -1,0 +1,22 @@
+{
+  "name": "kanonik",
+  "version": "1.0.0",
+  "description": "Governance runtime for compliance work: a typed compliance model, a tamper-evident record, a server-side Verifier, and a human-approval gate in front of every write. Draft policies, assess controls, run gap analysis and build audit evidence against ISO 27001:2022, SOC 2, GDPR, NIST CSF 2.0 and HIPAA.",
+  "author": {
+    "name": "Kanonik",
+    "url": "https://kanonik.ai"
+  },
+  "homepage": "https://kanonik.ai",
+  "repository": "https://github.com/Kanonik-LLC/kanonik-plugin",
+  "license": "Apache-2.0",
+  "keywords": [
+    "kanonik",
+    "grc",
+    "compliance",
+    "iso 27001",
+    "soc 2",
+    "audit evidence",
+    "governance"
+  ],
+  "logo": "assets/logo.svg"
+}
