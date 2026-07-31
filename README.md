@@ -69,8 +69,8 @@ and no local process. Everything runs server-side at Kanonik.
 ## Links
 
 - Site: [kanonik.ai](https://kanonik.ai)
-- Documentation: [docs.kanonik.ai](https://docs.kanonik.ai)
-- Support: [kanonik.ai/support](https://kanonik.ai/support)
+- Documentation: [kanonik.ai/docs](https://kanonik.ai/docs/)
+- Contact: [kanonik.ai/contact](https://kanonik.ai/contact)
 
 ## License
 
