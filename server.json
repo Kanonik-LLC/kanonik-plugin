@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.kanonik/kanonik",
+  "description": "Governance runtime for compliance: verified, human-approved writes to a tamper-evident record.",
+  "version": "1.0.0",
+  "websiteUrl": "https://kanonik.ai",
+  "repository": {
+    "url": "https://github.com/Kanonik-LLC/kanonik-plugin",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.kanonik.ai/mcp"
+    }
+  ]
+}
