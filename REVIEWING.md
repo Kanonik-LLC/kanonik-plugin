@@ -127,18 +127,19 @@ evidence, chained to the entry before it.
 
 ## Checking our claims without trusting us
 
-Every audit export carries its own verifier, and that verifier is
-published separately so you never have to trust the copy inside the
-bundle you were handed:
+Every audit export carries its own offline checker, and the same checker
+is published separately so you never have to trust the copy inside the
+package you were handed:
 
 ```bash
-git clone https://github.com/Kanonik-LLC/kanonik-verify.git
-python3 kanonik-verify/verify.py <bundle>
+git clone https://github.com/kanonik-ai/kanonik-export-checker.git
+python3 kanonik-export-checker/verify.py <package>/Verification
 ```
 
-MIT licensed, no network calls, exit code 0 means every check passed. You
-can diff that repository against the `chain/` directory in any bundle; a
-difference is itself a finding.
+MIT licensed, no network calls. You can compare that repository with the
+`Verification/chain/` folder of any package. Or drop the package on
+[kanonik.ai/verify](https://kanonik.ai/verify), which checks it in your
+browser without uploading it.
 
 ## Security questions
 

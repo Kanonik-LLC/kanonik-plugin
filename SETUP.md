@@ -31,8 +31,9 @@ never be asked to paste one.
 Authentication is OAuth 2.1 with PKCE. Clients that support Dynamic Client
 Registration, including Claude Code and Claude Desktop, register themselves
 and need no client ID. The requested scopes are `kanonik:read` (read the
-user's compliance record), `kanonik:propose` (draft changes for review) and
-`kanonik:commit` (submit a change for human approval).
+user's compliance record), `kanonik:propose` (draft changes for review),
+`kanonik:commit` (submit a change for human approval) and `offline_access`
+(keeps the client signed in).
 
 ## Confirming it worked
 
