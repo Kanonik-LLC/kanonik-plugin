@@ -3,8 +3,8 @@
 Security compliance software that works inside your AI.
 
 Kanonik makes your AI a compliance expert and checks every draft before you see
-it. Only what a named person approves goes into your Record, and anyone can
-verify that Record offline, without a Kanonik account.
+it. A named person approves each draft before it goes on your Record, and anyone
+can verify that Record offline, without a Kanonik account.
 
 ## What you can do with it
 
@@ -24,13 +24,13 @@ SOC 2, ISO/IEC 27001, HIPAA, GDPR, NIST CSF 2.0, NIST SP 800-53 Rev. 5, NIST SP 
 ## Connecting
 
 Kanonik is a hosted MCP server at `https://app.kanonik.ai/mcp`. Any MCP client
-that speaks streamable HTTP can connect to it. In Claude Code:
+that supports streamable HTTP and OAuth sign-in can connect to it. In Claude Code:
 
 ```
 claude mcp add --transport http kanonik https://app.kanonik.ai/mcp
 ```
 
-On first use a browser window opens for sign-in. Start your 14-day trial at
+On first use your client asks you to sign in. Start your 14-day trial at
 [kanonik.ai](https://kanonik.ai).
 
 ## What this plugin contains
@@ -50,18 +50,22 @@ and no local process. Everything runs server-side at Kanonik.
 
 ## Permissions and data
 
-- **Network.** One endpoint, `https://app.kanonik.ai/mcp`. Nothing else.
+- **Network.** The plugin configures one MCP endpoint,
+  `https://app.kanonik.ai/mcp`. You sign in at `https://auth.kanonik.ai` and
+  approve drafts in the Kanonik web app.
 - **Authentication.** OAuth 2.1 with Dynamic Client Registration and PKCE,
   against `https://auth.kanonik.ai`. Tokens are held by your client. The plugin
   holds no credential and ships no secret.
 - **Scopes.** `kanonik:read` to read your Record, `kanonik:propose` to draft
-  changes, `kanonik:commit` to submit them for approval.
-- **Writes.** Kanonik checks every draft, and nothing reaches your Record until
-  a person approves it. Your AI cannot approve its own work.
+  changes, `kanonik:commit` to submit them for approval, and `offline_access`
+  so your client stays signed in.
+- **Approvals.** Kanonik checks each draft your AI sends for approval, and the
+  draft goes on your Record only when a person approves it. Your AI cannot
+  approve its own work.
 - **Your data.** We do not train, fine-tune or evaluate any AI model on your
-  data. Kanonik never asks for or stores credentials to your other systems. If
-  your AI reads from GitHub, Jira or your identity provider, it does so through
-  its own connections.
+  data. Kanonik never asks for or stores credentials to the systems your AI
+  reads, such as your code, your cloud or your identity provider. Your AI reads
+  them through its own connections.
 
 ## Links
 

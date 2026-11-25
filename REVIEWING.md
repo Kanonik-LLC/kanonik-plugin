@@ -43,8 +43,8 @@ Claude Code:
 claude mcp add --transport http kanonik https://app.kanonik.ai/mcp
 ```
 
-Any MCP client speaking streamable HTTP works. Nothing to install, no API
-key to paste.
+Any MCP client that supports streamable HTTP and OAuth sign-in works.
+Nothing to install, no API key to paste.
 
 **Expect:** your client discovers the server and reports it needs
 authorisation.
@@ -62,8 +62,9 @@ publishes its own metadata if you want to inspect it before trusting it:
 curl https://app.kanonik.ai/.well-known/oauth-protected-resource
 ```
 
-**Expect:** three scopes named there, `kanonik:read`, `kanonik:propose`
-and `kanonik:commit`, then a successful return to your client.
+**Expect:** four scopes named there, `kanonik:read`, `kanonik:propose`,
+`kanonik:commit` and `offline_access` (keeps your client signed in), then a
+successful return to your client.
 
 ## Step 3: orient
 
@@ -80,14 +81,10 @@ compliance output is worse than none.
 
 ## Step 4: set up the programme
 
-Answer its questions. Any plausible answers work; this is a sandbox. When
-it asks which framework you are pursuing, say:
-
-> NIST CSF 2.0
-
-**Why that one:** NIST CSF 2.0 comes with every plan and is public
-domain, so no licence step stands between you and the path you came to
-assess.
+Answer its questions about your company (industry, size, how far along
+your security program is). Any plausible answers work; this is a sandbox. It
+does not ask for a framework: every control is placed against NIST CSF 2.0,
+which comes with every plan.
 
 ## Step 5: do a piece of real work
 
@@ -145,12 +142,13 @@ difference is itself a finding.
 
 ## Security questions
 
-- **Network:** one endpoint, `https://app.kanonik.ai/mcp`. No telemetry,
-  no analytics, no other hosts.
+- **Network:** the plugin configures one MCP endpoint,
+  `https://app.kanonik.ai/mcp`, and ships no telemetry or analytics. Sign-in
+  is at `https://auth.kanonik.ai`; approvals happen in the Kanonik web app.
 - **Credentials:** none held by the plugin. Tokens live in your client.
-- **Your other systems:** Kanonik never holds credentials to them. If
-  your AI reads from GitHub or your identity provider, it does so through
-  its own connections, not through us.
+- **The systems your AI reads:** Kanonik never holds credentials to your
+  code, cloud or identity provider. Your AI reads them through its own
+  connections, not through us.
 
 More at [kanonik.ai/docs/product/security](https://kanonik.ai/docs/product/security/).
 

@@ -1,7 +1,7 @@
 {
   "name": "kanonik",
-  "version": "1.1.0",
-  "description": "Security compliance software for your AI. Kanonik makes your AI a compliance expert for policies, controls, risks, vendors, evidence and security questionnaires, and checks every draft before you see it. Only what a named person approves goes into a Record anyone can verify offline. SOC 2, ISO/IEC 27001, HIPAA, GDPR, NIST CSF 2.0 and 12 more frameworks.",
+  "version": "1.1.4",
+  "description": "Security compliance software for your AI. Kanonik makes your AI a compliance expert for policies, controls, risks, vendors, evidence and security questionnaires, and checks every draft before you see it. A named person approves each draft before it goes on a Record anyone can verify offline. SOC 2, ISO/IEC 27001, HIPAA, GDPR, NIST CSF 2.0 and 12 more frameworks.",
   "author": {
     "name": "Kanonik",
     "url": "https://kanonik.ai"

@@ -1,7 +1,7 @@
 {
   "name": "kanonik",
-  "version": "1.0.0",
-  "description": "Governance runtime for compliance work. Draft policies, assess controls, run gap analysis and build verifiable audit evidence against ISO 27001:2022, SOC 2, GDPR, NIST CSF 2.0 and HIPAA. Every write passes a server-side Verifier and a human-approval gate, and lands in a tamper-evident record.",
+  "version": "1.1.4",
+  "description": "Run your compliance program from ChatGPT: draft policies, assess controls, answer security questionnaires and build audit evidence. Every change is checked, approved by a person and sealed in a tamper-evident record.",
   "author": {
     "name": "Kanonik",
     "url": "https://kanonik.ai"

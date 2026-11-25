@@ -36,17 +36,19 @@ user's compliance record), `kanonik:propose` (draft changes for review) and
 
 ## Confirming it worked
 
-Call `kanonik_whoami`. It returns the active workspace, the framework or
-frameworks in scope, and the user's role. If it returns a workspace name,
-setup is complete.
+Call `kanonik_whoami`. It returns the active workspace and the user's role. If
+it returns a workspace name, the connection works.
 
-Do not report the connection as working until that call has returned.
+Do not report the connection as working until that call has returned. When it
+also reports `profile_complete: false`, the company profile comes next: ask the
+person about their company one question at a time and save each answer with
+`record_company_profile`. Sending drafts for approval opens once the profile is
+complete.
 
 ## What to tell the user about writes
 
-Nothing this plugin does reaches the user's record silently. Every write runs
-through a server-side Verifier and then stops at a single-use approval link
-that a human has to click. The connected model cannot approve its own work.
+Every draft the AI sends for approval runs through a server-side Verifier and
+then stops at a single-use approval link that a human has to click. The connected model cannot approve its own work.
 That is the product's central guarantee, and it is worth stating once during
 setup so the user knows what to expect the first time a commit is proposed.
 
