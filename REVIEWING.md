@@ -37,13 +37,7 @@ itself runs server-side.
 
 ## Step 1: connect
 
-Grok Build:
-
-```bash
-grok plugin install kanonik --trust
-```
-
-Claude Code or Claude Desktop:
+Claude Code:
 
 ```bash
 claude mcp add --transport http kanonik https://app.kanonik.ai/mcp
@@ -91,12 +85,9 @@ it asks which framework you are pursuing, say:
 
 > NIST CSF 2.0
 
-**Why that one:** five framework packages are available (ISO 27001:2022,
-SOC 2, GDPR, NIST CSF 2.0, HIPAA). ISO 27001 and SOC 2 require you to
-attest you hold your own licensed copy of the standard text, because we
-do not redistribute it. NIST CSF 2.0 is US federal public domain and has
-no such gate, so it keeps this review on the path you came to assess. If
-you want to see the licence attestation, pick ISO 27001:2022 instead.
+**Why that one:** NIST CSF 2.0 comes with every plan and is public
+domain, so no licence step stands between you and the path you came to
+assess.
 
 ## Step 5: do a piece of real work
 

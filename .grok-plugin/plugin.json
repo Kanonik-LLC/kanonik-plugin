@@ -1,7 +1,7 @@
 {
   "name": "kanonik",
-  "version": "1.0.0",
-  "description": "Governance runtime for compliance work: a typed compliance model, a tamper-evident record, a server-side Verifier, and a human-approval gate in front of every write. Draft policies, assess controls, run gap analysis and build audit evidence against ISO 27001:2022, SOC 2, GDPR, NIST CSF 2.0 and HIPAA.",
+  "version": "1.1.0",
+  "description": "Security compliance software for your AI. Kanonik makes your AI a compliance expert for policies, controls, risks, vendors, evidence and security questionnaires, and checks every draft before you see it. Only what a named person approves goes into a Record anyone can verify offline. SOC 2, ISO/IEC 27001, HIPAA, GDPR, NIST CSF 2.0 and 12 more frameworks.",
   "author": {
     "name": "Kanonik",
     "url": "https://kanonik.ai"
@@ -11,12 +11,12 @@
   "license": "Apache-2.0",
   "keywords": [
     "kanonik",
-    "grc",
-    "compliance",
-    "iso 27001",
+    "security compliance",
     "soc 2",
-    "audit evidence",
-    "governance"
+    "iso 27001",
+    "hipaa",
+    "security questionnaires",
+    "audit evidence"
   ],
   "logo": "assets/logo.svg"
 }

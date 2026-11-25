@@ -1,45 +1,41 @@
 # Kanonik
 
-Governance runtime for compliance work, connected to Grok over MCP.
+Security compliance software that works inside your AI.
 
-Kanonik gives your AI a typed compliance model to work in, a tamper-evident
-record of everything it does, a server-side Verifier that checks its work, and a
-human-approval gate in front of every write. Your AI does the reasoning. Kanonik
-makes the result defensible.
+Kanonik makes your AI a compliance expert and checks every draft before you see
+it. Only what a named person approves goes into your Record, and anyone can
+verify that Record offline, without a Kanonik account.
 
 ## What you can do with it
 
-Ask your AI to work on your compliance program in plain language:
+Ask your AI in plain words:
 
-- Draft and revise policies and procedures against a loaded framework
-- Assess internal controls and record the evidence behind each judgement
-- Find the gaps between what a framework requires and what you actually have
-- Build an audit trail an assessor can verify independently
-- Produce a Statement of Applicability, or the equivalent artifact for your framework
+- Draft your security policies and keep them current
+- Build your controls, risks, vendors and evidence
+- Answer a customer's security questionnaire from what your team approved
+- See where you stand on a framework, and what is left to do
+- Check a new vendor or a change against what you promised, with Foresight
+- Prepare for an audit and send proof the recipient checks for themselves
 
-The framework in scope comes from your workspace. Kanonik runs ISO 27001:2022,
-SOC 2, GDPR, NIST CSF 2.0 and HIPAA today. Nothing in the plugin is specific to
-any one of them.
+## Frameworks
 
-## Installing
+SOC 2, ISO/IEC 27001, HIPAA, GDPR, NIST CSF 2.0, NIST SP 800-53 Rev. 5, NIST SP 800-171 Rev. 2 and Rev. 3, FedRAMP Rev. 5 baselines, GovRAMP Rev. 5 baselines, CCPA/CPRA, DORA, NIS2, NYDFS Part 500, EU AI Act, NIST AI RMF 1.0 and NIST SSDF. NIST CSF 2.0 and GDPR come with every plan.
 
-```
-/marketplace
-```
+## Connecting
 
-Then pick Kanonik. Or from the CLI:
+Kanonik is a hosted MCP server at `https://app.kanonik.ai/mcp`. Any MCP client
+that speaks streamable HTTP can connect to it. In Claude Code:
 
 ```
-grok plugin install kanonik --trust
+claude mcp add --transport http kanonik https://app.kanonik.ai/mcp
 ```
 
-On first use your AI connects to `https://app.kanonik.ai/mcp` and a browser
-window opens for sign-in. You will need a Kanonik account; sign up at
+On first use a browser window opens for sign-in. Start your 14-day trial at
 [kanonik.ai](https://kanonik.ai).
 
 ## What this plugin contains
 
-One file that tells Grok where the Kanonik MCP server lives:
+One file that tells your client where the Kanonik MCP server lives:
 
 ```json
 {
@@ -56,20 +52,22 @@ and no local process. Everything runs server-side at Kanonik.
 
 - **Network.** One endpoint, `https://app.kanonik.ai/mcp`. Nothing else.
 - **Authentication.** OAuth 2.1 with Dynamic Client Registration and PKCE,
-  against `https://auth.kanonik.ai`. Tokens are held by your Grok client. The
-  plugin holds no credential and ships no secret.
-- **Scopes.** `kanonik:read` to read your compliance record, `kanonik:propose`
-  to draft changes, `kanonik:commit` to submit them for approval.
-- **Writes.** No change reaches your record without a signed single-use approval
-  token and a human clicking to approve it. Your AI cannot approve its own work.
-- **Your other systems.** Kanonik never holds credentials to your source systems.
-  If your AI reads from GitHub, Jira, or your identity provider, it does so
-  through its own connections, not through Kanonik.
+  against `https://auth.kanonik.ai`. Tokens are held by your client. The plugin
+  holds no credential and ships no secret.
+- **Scopes.** `kanonik:read` to read your Record, `kanonik:propose` to draft
+  changes, `kanonik:commit` to submit them for approval.
+- **Writes.** Kanonik checks every draft, and nothing reaches your Record until
+  a person approves it. Your AI cannot approve its own work.
+- **Your data.** We do not train, fine-tune or evaluate any AI model on your
+  data. Kanonik never asks for or stores credentials to your other systems. If
+  your AI reads from GitHub, Jira or your identity provider, it does so through
+  its own connections.
 
 ## Links
 
 - Site: [kanonik.ai](https://kanonik.ai)
-- Documentation: [kanonik.ai/docs](https://kanonik.ai/docs/)
+- Help center: [kanonik.ai/docs](https://kanonik.ai/docs/)
+- Trust: [kanonik.ai/trust](https://kanonik.ai/trust)
 - Contact: [kanonik.ai/contact](https://kanonik.ai/contact)
 
 ## License

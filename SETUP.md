@@ -13,8 +13,8 @@ tool call will fail until the user has signed in.
 
 Two ways to get one:
 
-1. **Sign up** at <https://kanonik.ai/signup>. Kanonik is a paid product and
-   signup asks for a card.
+1. **Start a 14-day trial** at <https://kanonik.ai/signup>. Sign-up checks a
+   card; NIST CSF 2.0 and GDPR come with every plan.
 2. **Redeem an invite code**, which creates a workspace at no cost and skips
    the card step. Directory reviewers and evaluators should email
    <evereshagin@kanonik.ai> and say what they are evaluating.
